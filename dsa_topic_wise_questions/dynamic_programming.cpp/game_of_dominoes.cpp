@@ -1,4 +1,6 @@
 #include<bits/stdc++.h>
+
+// Brute force approach
 vector<int> getMin(vector<int> &arr, int n, int k)
 {
     auto &x = arr;
@@ -22,3 +24,7 @@ vector<int> getMin(vector<int> &arr, int n, int k)
     }
     return res;
 }
+
+
+// ......................................................................................................
+
