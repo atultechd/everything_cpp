@@ -33,13 +33,7 @@ int main() {
                 }
             }
         }
-        if(u_set.size()==1) cout << 0 << endl;
-
-        if(u_set.size()==2) cout << 1 << endl;
-
-        if(u_set.size()==3) cout << 2 << endl;
-
-        if(u_set.size()==4) cout << 3 << endl;
+        cout << u_set.size()-1 << endl;
         
     } 
 
