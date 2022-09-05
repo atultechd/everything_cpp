@@ -36,12 +36,29 @@ public:
             int mid = (low+high )/2;
 
             if(arr[mid] < arr[mid+1]){
-              
+
                 low = mid+1;
             }
             else high = mid;
         }
         return low;
+    }
+    
+};
+
+
+// .......................................................
+
+
+class Solution {
+
+public:
+
+    int peakIndexInMountainArray(vector<int>& arr) {
+
+        auto a = max_element(arr.begin(), arr.end());
+        
+        return a - arr.begin();
     }
     
 };
