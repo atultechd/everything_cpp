@@ -13,6 +13,7 @@ public:
             else if(operations[i] == "--X" || operations[i] == "X--") x--;
         }
         
+        
         return x;
     }
 };
