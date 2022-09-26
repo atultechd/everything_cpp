@@ -4,7 +4,7 @@ public:
 
     vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
 
-        vector<bool> res(candies.size());
+        vector<bool> ans(candies.size());
 
         for(int i=0; i<candies.size(); i++){
 
@@ -14,10 +14,10 @@ public:
 
             int temp = * max_element(candies.begin(), candies.end());
 
-            if(temp <= candies[i]) res[i] = 1;
+            if(temp <= candies[i]) ans[i] = 1;
             
             candies[i] = x;
         }
-        return res;
+        return ans;
     }
 };
