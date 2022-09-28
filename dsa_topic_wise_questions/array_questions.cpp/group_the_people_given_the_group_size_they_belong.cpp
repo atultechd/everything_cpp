@@ -1,4 +1,10 @@
-vector<vector<int>> groupThePeople(vector<int>& gz) {
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+void fx(vector<int>& gz) {
 
   vector<vector<int>> ans, groups(gz.size() + 1);
 
@@ -13,5 +19,23 @@ vector<vector<int>> groupThePeople(vector<int>& gz) {
       swap(ans.back(), groups[gz[i]]);
     }
   }
-  return ans;
+
+  for(int i=0; i< ans.size(); i++){
+
+      for(int j=0; j<ans[i].size(); j++){
+
+          cout << ans[i][j] << " ";
+      }
+      cout << endl;
+  }
+}
+
+
+int main() {
+
+    vector<int> gz = {3,3,3,3,3,1,3};
+
+    fx(gz);
+    
+    return 0;
 }
