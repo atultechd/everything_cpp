@@ -1,15 +1,15 @@
 static int numberof1s(int a){
 
-  int count = 0;
+  int counter = 0;
 
   while(a){
 
     a = a & (a-1);
 
-    count++;
+    counter++;
   }
 
-  return count;
+  return counter;
 }
 
 static bool compare(int a, int b){
