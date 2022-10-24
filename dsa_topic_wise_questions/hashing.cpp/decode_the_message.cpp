@@ -1,16 +1,22 @@
-string decodeMessage(string key, string mess) {
+class Solution {
 
-    char m[128] = {}, cur = 'a';
+public:
 
-    for (char k : key)
+    string decodeMessage(string key, string message) {
 
-        if (isalpha(k) && m[k] == 0)
+        char ch[128] = {}, cur = 'a';
 
-            m[k] = cur++;
+        for(auto k : key){
 
-    for (int i = 0; i < mess.size(); ++i)
+            if(isalpha(k) && ch[k] == 0){
 
-        mess[i] = m[mess[i]] ?: mess[i];
-      
-    return mess;
-}
+                ch[k] = cur++;
+            }
+        }
+        for(int i=0; i<message.size(); i++){
+          
+            message[i] = ch[message[i]] ? : message[i];
+        }
+        return message;
+    }
+};
