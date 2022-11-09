@@ -13,25 +13,26 @@ class Solution {
 
 public:
 
+    void sum(TreeNode* root, int &count){
+
+        if(!root) return;
+
+        sum(root->right, count);
+
+        count += root->val;
+
+        root->val = count;
+
+        sum(root->left, count);
+        
+    }
+
     TreeNode* bstToGst(TreeNode* root) {
 
-        int acc_sum = 0;
+        int count = 0;
 
-        sum_node(root,acc_sum);
-
-        return root;
-    }
-    
-    void sum_node(TreeNode* node, int& acc_sum){
-
-        if (node == NULL)  return;
-
-        sum_node(node->right,acc_sum);
-
-        node->val += acc_sum;
-
-        acc_sum = node->val;
+        sum(root,count);
         
-        sum_node(node->left, acc_sum);
+        return root;
     }
 };
