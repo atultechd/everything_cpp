@@ -15,28 +15,28 @@ public:
     
     TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
 
-        vector<TreeNode *> stk;
+        vector<TreeNode *> node;
 
         for(int i=0; i<nums.size(); i++){
 
-            TreeNode *cur = new TreeNode(nums[i]);
+            TreeNode *root = new TreeNode(nums[i]);
 
-            while(!stk.empty() && stk.back()->val < nums[i]){
+            while(!node.empty() && node.back()->val < nums[i]){
 
-                cur->left = stk.back();
+                root->left = node.back();
 
-                stk.pop_back();
+                node.pop_back();
+
+            }
+
+            if(!node.empty()){
+
+                node.back()->right = root;
 
             }
 
-            if(!stk.empty()){
-
-                stk.back()->right = cur;
-
-            }
-            
-            stk.push_back(cur);
+            node.push_back(root);
         }
-        return stk.front();
+        return node.front();
     }
 };
